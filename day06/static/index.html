@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/demo.css">
+</head>
+<body>
+    <h3>这个程序可以查询数字n的所有因数</h3>
+    <input type="text" id="text"><br>
+    <button id="btn">点击查询</button>
+
+    <script>
+        let btn = document.getElementById('btn'),
+            text = document.getElementById('text')
+        btn.onclick = function(){
+            //通过js的方式向/12这个地址发起的请求时get请求
+            window.location.href = `/${text.value}`
+        }
+    </script>
+</body>
+</html>
