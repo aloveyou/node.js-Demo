@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+    <div class="box">
+        <h2>微型订餐系统</h2>
+        手机号：<input type="text" id="phone"><br>
+        美食：<input type="text" id="food"><br>
+        <input type="submit" value='点我订餐' id="btn"><br>
+        <a href="/all">查看所有订单</a>
+    </div>
+    <script src="js/ajax.js"></script>
+    <script>
+        var oBtn = document.getElementById('btn'),
+            oPhone = document.getElementById('phone'),
+            oFood = document.getElementById('food');
+        oBtn.onclick = function () {
+            //向后台发起ajax请求
+            ajax({
+                url:'/order',
+                type:'post',
+                data:{
+                    phone:oPhone.value,
+                    food:oFood.value
+                },
+                success(msg){
+                    alert(msg);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
