@@ -1,0 +1,27 @@
+你要查看的学生姓名是：<input type="text" id="xuesheng"><br>
+<hr>
+<input type="submit" id="btn"><a href="/">点我返回首页</a>
+
+<script>
+    var oBtn = document.getElementById('btn'),
+        xuesheng = document.getElementById('xuesheng');
+    oBtn.onclick = function () {
+        ajax({
+            url: '/checkStudent',
+            type: 'post',
+            data: {
+                xuesheng: xuesheng.value
+            },
+            success(res) {
+                const { status, msg, result } = JSON.parse(res)
+                console.log(status, msg, result);
+                if (status === 0) { //有该学员
+                    alert('查询到学生'+result.name + '，性别：'+result.sex +
+                        '，语文：'+result.yuwen+'，数学：'+result.shuxue+'，英语：'+result.yinyu)
+                } else {
+                    alert(msg)
+                }
+            }
+        })
+    }
+</script>

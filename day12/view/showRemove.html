@@ -1,0 +1,19 @@
+你要删除的学生姓名是：<input type="text" id="xuesheng"><br>
+<input type="submit" id="btn"><a href="/">点我返回首页</a>
+<script>
+    var oBtn = document.getElementById('btn'),
+        xuesheng = document.getElementById('xuesheng');
+    oBtn.onclick = function () {
+        ajax({
+            url:'/removeStudent',
+            type:'post',
+            data:{
+                xuesheng:xuesheng.value
+            },
+            success(msg){
+                alert(msg);
+            }
+        })
+    }
+</script>
+
