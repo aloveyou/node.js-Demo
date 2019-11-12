@@ -2,17 +2,18 @@ body{
     background-color: skyblue;
 }
 #box{
-    width: 700px;
+    width: 742px;
     margin: 100px auto;
+    border: 1px solid #f9f;
 }
 h1{
-    margin-left: 280px;
+    margin:30px auto;
     color: #fff;
+    width:fit-content;
 }
 table{
-    width: 100%;
-    margin-top:20px;
-    margin-left:20px;
+    width: 700px;
+    margin:20px 20px 50px;
     border-collapse: collapse;
 }
 tr,td{
@@ -22,6 +23,7 @@ a{
     padding:10px 20px;
     text-decoration: none;
     color: blueviolet;
+    margin-left: 36px;
 }
 a:hover{
     color: #fff;
